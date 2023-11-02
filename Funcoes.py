@@ -1,3 +1,5 @@
+import random
+
 def filtra(lista,n):
     listap = []
     for i in lista:
@@ -20,3 +22,12 @@ def inidica_posicao(ps,pe):
         elif pe[i] not in ps:
             lista.append(2)
     return lista
+
+
+def inicializa(lista):
+    dic = {}
+    dic['n'] = len(lista[0])
+    dic['sorteada'] = random.choice(lista)
+    dic['especuladas'] = []
+    dic['tentativas'] = dic['n'] + 1
+    return dic
