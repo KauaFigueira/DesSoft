@@ -4,9 +4,8 @@ import palavras
 print('-------------------------\n|                       |\n|        TERMO          |\n|                       |\n-------------------------')
 print('\n')
 
-pergunta1 = int(input('Quer jogar com quantas letras? '))
 
-palavras_filtradas = Funcoes.filtra(palavras.PALAVRAS,pergunta1)
+palavras_filtradas = Funcoes.filtra(palavras.PALAVRAS,5)
 
 print('\n')
 print('Regras:\n'
@@ -16,7 +15,7 @@ print('Regras:\n'
   '  . \033[93mAmarelo\033[0m: a palavra tem a letra, mas está na posição errada;\n'
   '  . \033[91mVermelho\033[0m: a palavra não tem a letra.\n'
   '- Os acentos são ignorados.')
-
+print('\n')
 
 
 def game():
