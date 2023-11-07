@@ -59,7 +59,9 @@ def game():
     chutes.append(chute)
     print(testes)
     print('\n')
+  print(f'Palavra era {sorteada}')
 
+print('\n')
 game()
 while True:
   novamente = input('deseja jogar novamente? [sim/nao]: ')
