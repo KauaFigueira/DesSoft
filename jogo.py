@@ -19,14 +19,28 @@ print('\n')
 
 
 def game():
+  i = 6
   jogo = Funcoes.inicializa(palavras_filtradas)
   sorteada = jogo['sorteada']
-  print(sorteada)
+  # print(sorteada)
   chute = ''
+  chutes = []
   while chute != sorteada:
+    if i == 0:
+      print('Você perdeu!')
+      break
+    print(f'Você tem {i} tentativas')
     testes = ''
     chute = input('Adivinhe a palavra: ')
+    print('\n')
     lista = Funcoes.inidica_posicao(sorteada,chute)
+    while len(chute) != len(sorteada):
+      print('\nPalavra com quantidade de letras erradas!\nTeste com outra palavra.\n')
+      chute = input('Adivinhe a palavra: ')
+      lista = Funcoes.inidica_posicao(sorteada,chute)
+    if chute in chutes :
+      print('Você ja tentou essa palavra! Tente navamente\n')
+      chute = input('Adivinhe a palavra: ')
     if chute == sorteada:
         print('Parabens você ganhou')
         print(f'\033[94m{chute}\033[0m')
@@ -41,12 +55,15 @@ def game():
       elif lista[n] == 2:
         testes += f'\033[91m{chute[n]}\033[0m'
         # print(chute)
-  
+    i -= 1
+    chutes.append(chute)
     print(testes)
+    print('\n')
+
 game()
 while True:
-  novamente = input('deseja jogara again? [s/n]: ')
-  if novamente == 's':
+  novamente = input('deseja jogar novamente? [sim/nao]: ')
+  if novamente == 'sim':
     game()
   else:
     print('Até mais, obrigado por jogar!')
