@@ -17,20 +17,33 @@ print('Regras:\n'
   '- Os acentos são ignorados.')
 print('\n')
 
-
 def game():
+  print(' --- --- --- --- ---\n' 
+        f'|   |   |   |   |   |\n'
+         ' --- --- --- --- --- \n'
+        f'|   |   |   |   |   |\n'
+         ' --- --- --- --- ---\n' 
+        f'|   |   |   |   |   |\n'
+         ' --- --- --- --- ---\n' 
+        f'|   |   |   |   |   |\n'
+         ' --- --- --- --- ---\n' 
+        f'|   |   |   |   |   |\n'
+         ' --- --- --- --- ---\n' 
+        f'|   |   |   |   |   |\n'
+         ' --- --- --- --- ---' )
+  print('\n')
   i = 6
   jogo = Funcoes.inicializa(palavras_filtradas)
   sorteada = jogo['sorteada']
   # print(sorteada)
   chute = ''
   chutes = []
+  testes = ['']*30
   while chute != sorteada:
     if i == 0:
       print('Você perdeu!')
       break
     print(f'Você tem {i} tentativas')
-    testes = ''
     chute = input('Adivinhe a palavra: ')
     print('\n')
     lista = Funcoes.inidica_posicao(sorteada,chute)
@@ -46,18 +59,33 @@ def game():
         print(f'\033[94m{chute}\033[0m')
         break
     for n in range(len(chute)):
+      i_ = 6 - i
       if lista[n] == 0:
-        testes += f'\033[94m{chute[n]}\033[0m'
+        testes[5*i_+n] = f'\033[94m{chute[n]}\033[0m'
         # print(chute)
       elif lista[n] == 1:
-        testes += f'\033[93m{chute[n]}\033[0m'
+        testes[5*i_+n] = f'\033[93m{chute[n]}\033[0m'
         # print(chute)
       elif lista[n] == 2:
-        testes += f'\033[91m{chute[n]}\033[0m'
+        testes[5*i_+n] = f'\033[91m{chute[n]}\033[0m'
         # print(chute)
     i -= 1
     chutes.append(chute)
-    print(testes)
+    # print(testes[0])
+    print(' --- --- --- --- ---\n' 
+        f'| {testes[0]}  | {testes[1]}  | {testes[2]}  | {testes[3]}  | {testes[4]}  |\n'
+         ' --- --- --- --- --- \n'
+        f'| {testes[5]}  | {testes[6]}  | {testes[7]}  | {testes[8]}  | {testes[9]}  |\n'
+         ' --- --- --- --- ---\n' 
+        f'| {testes[10]}  | {testes[11]}  | {testes[12]}  | {testes[13]}  | {testes[14]}  |\n'
+         ' --- --- --- --- ---\n' 
+        f'| {testes[15]}  |{testes[16]}   | {testes[17]}  | {testes[18]}  | {testes[19]}  |\n'
+         ' --- --- --- --- ---\n' 
+        f'| {testes[20]}  | {testes[21]}  | {testes[22]}  | {testes[23]}  | {testes[24]}  |\n'
+         ' --- --- --- --- ---\n' 
+        f'| {testes[25]}  | {testes[26]}  | {testes[27]}  | {testes[28]}  | {testes[29]}  |\n'
+         ' --- --- --- --- ---' )
+    
     print('\n')
   print(f'Palavra era {sorteada}')
 
@@ -70,7 +98,6 @@ while True:
   else:
     print('Até mais, obrigado por jogar!')
     break
-
 
   
 
