@@ -17,21 +17,6 @@ print('Regras:\n'
 print('\n')
 
 def game():
-  print(' --- --- --- --- ---\n' 
-        f'|   |   |   |   |   |\n'
-         ' --- --- --- --- --- \n'
-        f'|   |   |   |   |   |\n'
-         ' --- --- --- --- ---\n' 
-        f'|   |   |   |   |   |\n'
-         ' --- --- --- --- ---\n' 
-        f'|   |   |   |   |   |\n'
-         ' --- --- --- --- ---\n' 
-        f'|   |   |   |   |   |\n'
-         ' --- --- --- --- ---\n' 
-        f'|   |   |   |   |   |\n'
-         ' --- --- --- --- ---' )
-  print('\n')
-  
   i = 6
   jogo = Funcoes.inicializa(palavras_filtradas)
   sorteada = jogo['sorteada']
@@ -77,18 +62,18 @@ def game():
     i -= 1
     chutes.append(chute)
     # print(testes[0])
-    print(' --- --- --- --- --- \n' 
-        f'| {testes[0]} | {testes[1]} | {testes[2]} | {testes[3]} | {testes[4]} |\n'
+    print(' --- --- --- --- ---\n' 
+        f'| {testes[0]}  | {testes[1]}  | {testes[2]}  | {testes[3]}  | {testes[4]}  |\n'
          ' --- --- --- --- --- \n'
-        f'| {testes[5]} | {testes[6]} | {testes[7]} | {testes[8]} | {testes[9]} |\n'
+        f'| {testes[5]}  | {testes[6]}  | {testes[7]}  | {testes[8]}  | {testes[9]}  |\n'
          ' --- --- --- --- ---\n' 
-        f'| {testes[10]} | {testes[11]} | {testes[12]} | {testes[13]} | {testes[14]} |\n'
+        f'| {testes[10]}  | {testes[11]}  | {testes[12]}  | {testes[13]}  | {testes[14]}  |\n'
          ' --- --- --- --- ---\n' 
-        f'| {testes[15]} |{testes[16]} | {testes[17]} | {testes[18]} | {testes[19]} |\n'
+        f'| {testes[15]}  |{testes[16]}   | {testes[17]}  | {testes[18]}  | {testes[19]}  |\n'
          ' --- --- --- --- ---\n' 
-        f'| {testes[20]} | {testes[21]} | {testes[22]} | {testes[23]} | {testes[24]} |\n'
+        f'| {testes[20]}  | {testes[21]}  | {testes[22]}  | {testes[23]}  | {testes[24]}  |\n'
          ' --- --- --- --- ---\n' 
-        f'| {testes[25]} | {testes[26]} | {testes[27]} | {testes[28]} | {testes[29]} |\n'
+        f'| {testes[25]}  | {testes[26]}  | {testes[27]}  | {testes[28]}  | {testes[29]}  |\n'
          ' --- --- --- --- ---' )
     
     print('\n')
@@ -103,7 +88,6 @@ while True:
   else:
     print('Até mais, obrigado por jogar!')
     break
-
 
   
 
