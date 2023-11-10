@@ -37,14 +37,12 @@ def game():
         f'\t|   |   |   |   |   |\n'
          '\t --- --- --- --- ---' )
   print('\n')
-  i = 6
   jogo = Funcoes.inicializa(palavras_filtradas)
   sorteada = jogo['sorteada']
-  print(sorteada)
   chute = ''
   
   while chute != sorteada:
-    if i == 0:
+    if jogo['tentativas'] == 0:
       print('Você perdeu!')
       print(f'Palavra era {sorteada}')
       break
