@@ -1,5 +1,12 @@
 import random
 
+cores = {
+    0: '\033[94m',
+    1: '\033[93m',
+    2: '\033[91m',
+    -1: '\033[0m'
+  }
+
 def filtra(lista,n):
     listap = []
     for i in lista:
@@ -31,3 +38,17 @@ def inicializa(lista):
     dic['especuladas'] = []
     dic['tentativas'] = dic['n'] + 1
     return dic
+
+def imprime_tabuleiro(jogo):
+    for lin in range(jogo['n'] + 1):
+      s = '\t  --- --- --- --- ---\n \t | '
+      if lin < len(jogo['especuladas']):
+        especulada = jogo['especuladas'][lin]
+        color = inidica_posicao(jogo['sorteada'], especulada)
+        for j in range(len(especulada)):
+          s += f'{ cores[color[j]]}{especulada[j]}{cores[-1]} | '
+      else:
+        for j in range(jogo['n']):
+          s += f'  | '
+      s += '\n\t  --- --- --- --- --- '
+      print(s)
